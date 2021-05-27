@@ -22,3 +22,13 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
+
+
+class Tax(models.Model):
+    tax_name = models.CharField(max_length=100, blank=True)
+    rate = models.FloatField()
+    is_active = models.BooleanField(default=False)
+    tax_session = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return self.tax_session
